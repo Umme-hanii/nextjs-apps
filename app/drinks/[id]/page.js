@@ -26,8 +26,15 @@ const SingleDrinkPage = async ({ params }) => {
       </Link>
       <div className="mx-auto w-3/5">
         <h3 className="font-bold mb-4">{strDrink}</h3>
-        <Image
+        {/* <Image
           src={drinkImg}
+          alt={strDrink}
+          className="w-48 h-48 border-4 border-accent rounded-lg"
+        /> */}
+        <Image
+          src={strDrinkThumb}
+          width={300}
+          height={300}
           alt={strDrink}
           className="w-48 h-48 border-4 border-accent rounded-lg"
         />
