@@ -1,7 +1,6 @@
-const url = "https://www.thecocktaildb.com/api/json/v1/1/search.phps?f=a";
+const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";
 
 const fetchDrinks = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
   const resp = await fetch(url);
 
   if (!resp.ok) {
