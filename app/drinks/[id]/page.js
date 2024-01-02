@@ -36,6 +36,7 @@ const SingleDrinkPage = async ({ params }) => {
           width={300}
           height={300}
           alt={strDrink}
+          priority
           className="w-48 h-48 border-4 border-accent rounded-lg"
         />
       </div>
