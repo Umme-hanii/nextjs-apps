@@ -1,6 +1,20 @@
+import { revalidatePath } from "next/cache";
+
+const createTask = async (formData) => {
+  "use server";
+  const content = formData.get("content");
+  console.log("content", content);
+  await prisma.task.create({
+    data: {
+      content: content,
+    },
+  });
+  revalidatePath("/tasks");
+};
+
 const TaskForm = () => {
   return (
-    <form>
+    <form action={createTask}>
       <div className="join w-full">
         <input
           type="text"
