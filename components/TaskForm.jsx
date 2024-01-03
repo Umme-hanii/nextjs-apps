@@ -1,16 +1,4 @@
-import { revalidatePath } from "next/cache";
-
-const createTask = async (formData) => {
-  "use server";
-  const content = formData.get("content");
-  console.log("content", content);
-  await prisma.task.create({
-    data: {
-      content: content,
-    },
-  });
-  revalidatePath("/tasks");
-};
+import { createTask } from "@/utils/actions";
 
 const TaskForm = () => {
   return (
@@ -29,4 +17,5 @@ const TaskForm = () => {
     </form>
   );
 };
+
 export default TaskForm;

@@ -1,11 +1,9 @@
-import prisma from "@/utils/db";
 import Link from "next/link";
 import DeleteForm from "./DeleteForm";
+import { getAllTasks } from "@/utils/actions";
 
 const TasksList = async () => {
-  const tasks = await prisma.task.findMany({
-    orderBy: { createdAt: "desc" },
-  });
+  const tasks = await getAllTasks();
 
   if (tasks.length === 0) {
     return (
@@ -14,6 +12,7 @@ const TasksList = async () => {
       </div>
     );
   }
+
   return (
     <ul className="mt-8 max-w-xl">
       {tasks.map((task) => {
@@ -44,4 +43,5 @@ const TasksList = async () => {
     </ul>
   );
 };
+
 export default TasksList;
