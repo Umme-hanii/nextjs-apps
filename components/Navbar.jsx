@@ -3,7 +3,7 @@ import Link from "next/link";
 const links = [
   { href: "/client", label: "client" },
   { href: "/drinks", label: "drinks" },
-  { href: "/query", label: "query" },
+  { href: "/prisma-example", label: "prisma" },
   { href: "/tasks", label: "tasks" },
 ];
 
