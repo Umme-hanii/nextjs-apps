@@ -1,11 +1,12 @@
 import prisma from "@/utils/db";
 
 const prismaHandlers = async () => {
-  await prisma.task.create({
-    data: {
-      content: "wake up",
-    },
-  });
+  console.log("prisma example");
+  // await prisma.task.create({
+  //   data: {
+  //     content: "wake up",
+  //   },
+  // });
   const allTasks = await prisma.task.findMany({
     orderBy: {
       createdAt: "desc",
@@ -16,6 +17,15 @@ const prismaHandlers = async () => {
 
 const PrismaPage = async () => {
   const tasks = await prismaHandlers();
+
+  if (tasks.length === 0) {
+    return (
+      <div className="card mt-16 mx-auto w-72 text-center font-bold bg-neutral-200 p-4 text-secondary">
+        <h2>No tasks to show</h2>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h1 className="text-7xl">PrismaExample</h1>
