@@ -1,3 +1,7 @@
+These are some simple projects to learn Nextjs concepts.
+
+Deployed project on Vercel [https://nextjs-apps-kohl.vercel.app/tasks]
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
