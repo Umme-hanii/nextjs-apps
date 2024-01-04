@@ -1,6 +1,8 @@
 import TaskForm from "@/components/TaskForm";
 import TasksList from "@/components/TasksList";
 
+export const dynamic = "force-dynamic";
+
 const TasksPage = () => {
   return (
     <main className="max-w-lg">
