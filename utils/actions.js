@@ -32,9 +32,9 @@ export const createTask = async (prevState, formData) => {
     });
 
     revalidatePath("/tasks");
-    return { message: "Success!!!" };
+    return { message: "Success" };
   } catch (error) {
-    return { message: "error...." };
+    return { message: "error" };
   }
 };
 

@@ -1,6 +1,8 @@
 "use client";
 import { createTask } from "@/utils/actions";
+import { useEffect } from "react";
 import { useFormStatus, useFormState } from "react-dom";
+import toast from "react-hot-toast";
 
 const SubmitTask = () => {
   const { pending } = useFormStatus();
@@ -22,11 +24,18 @@ const initialState = {
 const TaskForm = () => {
   const [state, formAction] = useFormState(createTask, initialState);
 
+  useEffect(() => {
+    if (state.message == "error") {
+      toast.error("There was an error creating the task");
+      return;
+    }
+    if (state.message) {
+      toast.success("Task created !!!");
+    }
+  }, [state]);
+
   return (
     <form action={formAction}>
-      {state.message ? (
-        <p className="font-bold mb-8 capitalize">{state.message}</p>
-      ) : null}
       <div className="join w-full">
         <input
           type="text"
