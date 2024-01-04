@@ -5,7 +5,11 @@ import { useFormStatus } from "react-dom";
 const SubmitTask = () => {
   const { pending } = useFormStatus();
   return (
-    <button type="submit" className="btn btn-primary uppercase join-item">
+    <button
+      type="submit"
+      className="btn btn-primary uppercase join-item"
+      disabled={pending}
+    >
       {pending ? "Please wait" : "create task"}
     </button>
   );
